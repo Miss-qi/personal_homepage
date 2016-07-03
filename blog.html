@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的文章</title>
+	<style type="text/css">
+	*{margin: 0;padding: 0;}
+	li{list-style-type: none;}
+	a{text-decoration: none;color: #fff;}
+	a:hover{text-decoration: underline;}
+	a,img,button,input{border:0;}
+	body{background: #eee;}
+	/*头部*/
+	.header{width: 100%;height: 80px;background: rgb(82,42,92);overflow: hidden;position: relative;}
+	.header_banner{width: 980px;margin: 0 auto;height: 75px;position: relative;overflow: hidden;}
+	.name{font-family: "Microsoft YaHei";font-size: 32px;line-height:32px;color: #fff;position: absolute;left: 0;bottom: 0;}
+	.header_banner ul{position: absolute;right: 0;bottom: 0;}
+	.header_banner li{display: inline-block;margin-left: 24px;font-family: "宋体";font-size: 14px;}
+	.logo{display:block;position: absolute;right: 10px;bottom: 0;}
+	.logo img{vertical-align: bottom;}
+
+	/*主体*/
+	.mainer{width: 980px;margin:0 auto;margin-top: 20px;}
+	/*左边*/
+	.left{width: 710px;margin-bottom: 330px;float: left;}
+	/*文章内容*/
+	.blog_main{background-color: #fff;margin: 0 0 10px;padding: 20px; position: relative;}
+	.blog_main h2{color: rgb(161,64,161);font-size: 16px;margin-bottom: 10px;}
+	.blog_main h3{color: #666;font-size: 12px;margin-bottom: 15px;}
+	.article{font-size: 12px;color: #000;position: relative;overflow: hidden;}
+	.article p{line-height: 1.8;text-indent: 2em;}
+	.author{float: right;color: #959595;font-size: 12px;margin-top: 20px;}
+	/*页面日期*/
+	.side_cade{color: #fff;height: 80px;left: -50px;position: absolute;text-align: center;top: 20px;width: 50px;}
+	.left_date,.left_css{ height: 40px;line-height: 40px;}
+	.left_date{background-color:  #52385b;}
+	.left_css{background-color: rgb(191,94,191);}
+	/*页码*/
+	.page{text-align: center;}
+	.page a{display: inline-block;background-color: #fff;color: #000;margin: 0 5px;padding: 10px 15px;font-size: 12px;}
+	body .disable{color: #ccc;}
+	body .current{background: rgb(161,94,161);color: #fff;}
+
+	/*右边*/
+	.right{width: 260px;position: relative;float: right;}
+	/*搜索*/
+	.search{padding: 20px;margin-bottom: 10px;background-color: #fff;}
+	.search input{height: 40px;width: 120px;line-height: 40px;color: #aaa;background: url(images/search.png) no-repeat ;padding: 0 0 0 50px;border-style: solid none solid solid;border-width:1px 0 1px 1px;border-color: rgb(221,221,221);}
+	.search button{width: 50px;height: 42px;color:#fff;position: absolute;right: 20px;top: 20px;background-color: #ddd;font-size: 20px;}
+	/*目录*/
+	.category{margin-bottom: 10px;}
+	.category a{display:block;background: #fff;border-bottom: 1px solid #eee;border-left: 4px solid #d8bce2;color: #666;padding-left: 20px;font-size: 14px;height: 50px;line-height: 50px;}
+	body .first{border-left: 4px solid rgb(191,94,191);}
+	.category a:hover{border-left: 4px solid rgb(191,94,191);text-decoration: none;}
+	/*日历未完待续*/
+	.date{padding: 20px;margin-bottom: 10px;background-color: #fff;text-align: center;font-size: 13px;}
+	.year_month{color: #52385b;font-weight: bold;margin-bottom: 5px;font-size: 13px;position: relative;}
+	.year_month a{display: inline-block;color:#52385b; }
+	.year_month span{margin: 0 auto;padding: 0 50px;letter-spacing: 3px;}
+	table{color: #888;margin: 0 auto;border-collapse: collapse;border-spacing: 0;}
+	table td,th{font-weight: normal;padding: 8px;}
+	table tr{border-bottom: 1px solid #e5e5e5;padding: 3px;}
+	table tr .today{background-color: rgb(191,94,191);color: #fff;padding: 4px 3px;}
+	/*标志*/
+	.tags{background-color: #fff;padding: 10px 20px;}
+	.tags_head{color: #666;margin-bottom: 15px;}
+	.tags_footer{color: rgb(191,94,191);}
+	.tag1,.tag8,.tag12{font-size: 28px;}
+	.tag2,.tag5,.tag7{font-size: 22px;}
+
+
+	/*尾部*/
+	.footer{background: #000;overflow: hidden;width: 100%;}
+	.footer_title{width: 100%;text-align: center;border-bottom: 1px solid #333;line-height: 36px;}
+	.footer li{padding: 0 10px;display: inline-block;font-size: 12px;}
+	.footer_link{width: 1000px;margin: 0 auto;margin-top: 40px;overflow: hidden;}
+	.footer_link ul{width: 200px;float: left;}
+	.title{margin-bottom: 25px;}
+	.footer_link li{color: #fff;font-size: 12px;width: 200px;}
+	/*版权*/
+	.copyright{color: #fff;font-size: 12px;text-align: center;margin-top: 40px;margin-bottom: 20px;}
+	.footer_logo{display:block;text-align: center;}
+	.footer_logo img{vertical-align: bottom;}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="header_banner">
+			<div class="name">small柚子君</div>
+			<ul>
+				<li>
+					<a href="index1.html">首页</a>
+				</li>
+				<li>
+					<a href="blog.html">文章</a>
+				</li>
+				<li>
+					<a href="production.html">作品</a>
+				</li>
+				<li>
+					<a href="about.html">关于</a>
+				</li>
+			</ul>
+		</div>
+		<a href="#" class="logo"><img src="images/icon-github.png"></a>
+	</div>
+	<div class="mainer">
+		<div class="left">
+			<div class="blog_main">
+				<h2>HTML,CSS基础</h2>
+				<h3>学习笔记</h3>
+				<div class="article">
+					<p>这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。</p>
+					<p>这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。</p>
+					<p>这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。</p>
+					<p>这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。</p>
+					<p>这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。</p>
+					<div class="author">small柚子君发表于&nbsp;2016年5月8日</div>
+				</div>
+					<div class="side_cade">
+					<div class="left_date">5.08</div>
+					<div class="left_css">CSS</div>
+				</div>
+			</div>
+			<div class="blog_main">
+				<h2>HTML,CSS基础</h2>
+				<h3>学习笔记</h3>
+				<div class="article">
+					<p>这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。</p>
+					<p>这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。</p>
+					<p>这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。</p>
+					<p>这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。</p>
+					<p>这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。</p>
+					<div class="author">small柚子君发表于&nbsp;2016年5月8日</div>
+				</div>
+					<div class="side_cade">
+					<div class="left_date">5.08</div>
+					<div class="left_css">CSS</div>
+				</div>
+			</div>
+			<div class="blog_main">
+				<h2>HTML,CSS基础</h2>
+				<h3>学习笔记</h3>
+				<div class="article">
+					<p>这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。</p>
+					<p>这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。</p>
+					<p>这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。这就是一些笔记，乱七八糟的。</p>
+					<div class="author">small柚子君发表于&nbsp;2016年5月8日</div>
+				</div>
+					<div class="side_cade">
+					<div class="left_date">5.08</div>
+					<div class="left_css">CSS</div>
+				</div>	
+			</div>
+			<div class="page">
+				<a href="#" class="disable">第一页</a>
+				<a href="#" class="disable">上一页</a>
+				<a href="#">1</a>
+				<a href="#" class="current">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">···</a>
+				<a href="#">下一页</a>
+				<a href="#">最后页</a>
+			</div>
+			
+		
+		</div>
+		<div class="right">
+			<div class="search">
+				<input class="search_input" type="text" value="Keywords">
+				<button>GO</button>
+			</div>
+			<div class="category">
+				<a href="#" class="first">HTML</a>
+				<a href="#">CSS</a>
+				<a href="#">JavaScript</a>
+				<a href="#">其他</a>
+			</div>
+			<div class="date">
+				<div class="year_month">
+					<a href="#" class="date_left"><</a>
+					<span>2016.05</span>
+					<a href="#" class="date_right">></a>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th>S</th>
+							<th>M</th>
+							<th>T</th>
+							<th>W</th>
+							<th>T</th>
+							<th>F</th>
+							<th>S</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+							<td>7</td>
+						</tr>
+						<tr>
+							<td class="today">8</td>
+							<td>9</td>
+							<td>10</td>
+							<td>11</td>
+							<td>12</td>
+							<td>13</td>
+							<td>14</td>
+						</tr>
+						<tr>
+							<td>15</td>
+							<td>16</td>
+							<td>17</td>
+							<td>18</td>
+							<td>19</td>
+							<td>20</td>
+							<td>21</td>
+						</tr>
+						<tr>
+							<td>22</td>
+							<td>23</td>
+							<td>24</td>
+							<td>25</td>
+							<td>26</td>
+							<td>27</td>
+							<td>28</td>
+						</tr>
+						<tr>
+							<td>29</td>
+							<td>30</td>
+							<td>31</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="tags">
+				<div class="tags_head">Tags</div>
+				<div class="tags_footer">
+					<span class="tag1">JavaScript</span>
+					<span class="tag2">CSS</span>
+					<span class="tag3">HTML</span>
+					<span class="tag4">flex</span>
+					<span class="tag5">WebGL</span>
+					<span class="tag6">Canvas</span>
+					<span class="tag7">prototype</span>
+					<span class="tag8">HTML5</span>
+					<span class="tag9">grid</span>
+					<span class="tag10">node/JS</span>
+					<span class="tag11">CSS3</span>
+					<span class="tag12">jQuery</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<ul class="footer_title">
+			<li>
+				<a href="index1.html">首页</a>
+			</li>
+			<li>
+				<a href="blog.html">文章</a>
+			</li>
+			<li>
+				<a href="production.html">作品</a>
+			</li>
+			<li>
+				<a href="about.html">关于</a>
+			</li>
+		</ul>
+		<div class="footer_link">
+			<ul>
+				<li class="title">学习资料</li>
+				<li><a href="#">链接</a></li>
+				<li><a href="#">另一个链接</a></li>
+				<li><a href="#">链接</a></li>
+				<li><a href="#">链接</a></li>
+				<li><a href="#">链接</a></li>
+				<li><a href="#">链接</a></li>
+			</ul>
+			<ul>
+				<li class="title">友情链接</li>
+				<li><a href="#">链接</a></li>
+				<li><a href="#">另一个链接</a></li>
+				<li><a href="#">链接</a></li>
+				<li><a href="#">链接</a></li>
+			</ul>
+			<ul>
+				<li class="title">学习资料</li>
+				<li><a href="#">链接</a></li>
+				<li><a href="#">另一个链接</a></li>
+				<li><a href="#">链接</a></li>
+				<li><a href="#">链接</a></li>
+				<li><a href="#">链接</a></li>
+				<li><a href="#">链接</a></li>
+			</ul>
+			<ul>
+				<li class="title">友情链接</li>
+				<li><a href="#">链接</a></li>
+				<li><a href="#">另一个链接</a></li>
+				<li><a href="#">链接</a></li>
+				<li><a href="#">链接</a></li>
+			</ul>
+			<ul>
+				<li class="title">学习资料</li>
+				<li><a href="#">链接</a></li>
+				<li><a href="#">另一个链接</a></li>
+				<li><a href="#">链接</a></li>
+				<li><a href="#">链接</a></li>
+				<li><a href="#">链接</a></li>
+				<li><a href="#">链接</a></li>
+			</ul>
+		</div>
+		<div class="copyright">版权信息</div>
+		<a href="#" class="footer_logo"><img src="images/icon-github.png"></a>
+	</div>
+</body>
+</html>
